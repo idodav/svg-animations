@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <style>
+        @keyframes drawCircle {
+            0% {
+                stroke-dashoffset: 151px;
+            }
+
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes drawCheck {
+            0% {
+                stroke-dashoffset: 36px;
+            }
+
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        #successContainer {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #successAnimationCircle {
+            stroke-dasharray: 151px 151px;
+            stroke: #4CAF50;
+            animation-duration: 1s;
+            animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+            animation-delay: 0s;
+            animation-direction: normal;
+            animation-fill-mode: both;
+            animation-play-state: running;
+            animation-name: drawCircle;
+            animation-iteration-count: infinite;
+        }
+
+        #successAnimationCheck {
+            stroke-dasharray: 36px 36px;
+            stroke: #4CAF50;
+            animation-duration: 1s;
+            animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1), linear;
+            animation-delay: 0s;
+            animation-direction: normal;
+            animation-fill-mode: both;
+            animation-play-state: running;
+            animation-name: drawCheck;
+            animation-iteration-count: infinite;
+        }
+
+        #successAnimationResult {
+            stroke: #FFF;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="successContainer">
+        <svg id="successAnimation" className="animated" width="70" height="70" viewBox="0 0 70 70">
+            <circle id="successAnimationCircle" cx="35" cy="35" r="24" stroke="#979797" strokeWidth="2"
+                strokeLinecap="round" fill="transparent" />
+            <polyline id="successAnimationCheck" stroke="#979797" strokeWidth="2" points="23 34 34 43 47 27"
+                fill="transparent" />
+        </svg>
+    </div>
+</body>
+
+</html>
